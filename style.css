@@ -217,3 +217,36 @@
             background-color: #4338ca;
         }
    
+/* General skill bar container */
+.skill-bar {
+    background-color: #e5e7eb; /* Tailwind gray-200 */
+    border-radius: 9999px;
+    overflow: hidden;
+    height: 1rem; /* h-4 */
+    width: 100%;
+    position: relative;
+}
+
+/* Progress fill */
+.skill-progress {
+    display: block;
+    height: 100%;
+    width: 0; /* Start at 0 for animation */
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 9999px;
+    transition: width 1.2s ease-in-out;
+    position: relative;
+}
+
+/* Label inside the progress bar */
+.skill-progress::after {
+    content: attr(data-skill) " " attr(data-percent);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 500;
+    white-space: nowrap;
+}
